@@ -21,7 +21,7 @@ class ScheduleController extends Controller
             'name' => 'required|min:2',
             'location' => 'required|min:2',
             'datetime' => 'required|date',
-            'sdut_id' => 'required||exists:youth_users,sdut_id'
+            'sdut_id' => 'required|exists:youth_users,sdut_id'
         ]);
 
         $name = request('name');

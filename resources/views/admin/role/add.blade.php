@@ -27,25 +27,31 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form class="form-horizontal"  action="/admin/roles/store" method="post">
+                    <form class="form-horizontal"  action="store" method="post">
                         {{csrf_field()}}
                         <div class="box-body">
                             <div class="form-group">
-                                <label for="inputName" class="col-sm-2 control-label">Role Name</label>
+                                <label for="input1" class="col-sm-2 control-label">角色名</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputName" name="name" placeholder="添加角色名">
+                                    <input type="text" class="form-control" id="input1" name="name" placeholder="请输入角色英文名称">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputDesc" class="col-sm-2 control-label">Description</label>
+                                <label for="input2" class="col-sm-2 control-label">角色名</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputDesc" name="description" placeholder="添加角色描述">
+                                    <input type="text" class="form-control" id="input2" name="display_name" placeholder="请输入角色显示名称">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="input3" class="col-sm-2 control-label">角色描述</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="input3" name="description" placeholder="请输入角色描述">
                                 </div>
                             </div>
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer">
-                            {{--<button type="submit" class="btn btn-default">返回</button>--}}
+                            @include('admin.layout.error')
                             <button type="submit" class="btn btn-info pull-right">提交</button>
                         </div>
                         <!-- /.box-footer -->

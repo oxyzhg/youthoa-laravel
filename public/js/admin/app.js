@@ -9,7 +9,5 @@ $(function () {
         'lengthMenu': [[10, 20, -1], [10, 20, "All"]],
         "language": { "zeroRecords": "没有找到数据喔！" }
     });
-    $(".alert").fadeTo(2000, 500).slideUp(500, function(){
-        this.alert('close')
-    });
+    // $(".alert").fadeTo(2000, 500).slideUp(500);
 });

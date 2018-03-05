@@ -96,6 +96,7 @@
                                 <th>#</th>
                                 <th>权限名称<a class="fa fa-fw fa-sort" href="http://laravel-admin.org/demo/auth/users?_sort%5Bcolumn%5D=id&_sort%5Btype%5D=desc"></a></th>
                                 <th>权限描述</th>
+                                <th>更新时间</th>
                                 <th>操作</th>
                             </tr>
                             @foreach($permissions as $permission)
@@ -107,10 +108,13 @@
                                     {{$permission->id}}
                                 </td>
                                 <td>
-                                    {{$permission->name}}
+                                    <span class='label label-success'>{{$permission->display_name}}</span>
                                 </td>
                                 <td>
                                     {{$permission->description}}
+                                </td>
+                                <td>
+                                    {{$permission->updated_at}}
                                 </td>
                                 <td>
                                     <a href="javascript:void(0);">

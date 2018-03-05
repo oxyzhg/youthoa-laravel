@@ -33,16 +33,16 @@
 				</a>
 				<ul class="treeview-menu">
 					<li>
-						<a href="/admin/users"><i class="fa fa-circle-o"></i>Users</a>
+						<a href="/admin/users"><i class="fa fa-circle-o"></i>用户</a>
 					</li>
 					<li>
-						<a href="/admin/roles"><i class="fa fa-circle-o"></i>Roles</a>
+						<a href="/admin/roles"><i class="fa fa-circle-o"></i>角色</a>
 					</li>
 					<li>
-						<a href="/admin/permissions"><i class="fa fa-circle-o"></i>Permission</a>
+						<a href="/admin/permissions"><i class="fa fa-circle-o"></i>权限</a>
 					</li>
 					<li>
-						<a href="/admin/menus"><i class="fa fa-circle-o"></i>Menu</a>
+						<a href="/admin/menus"><i class="fa fa-circle-o"></i>菜单</a>
 					</li>
 				</ul>
 			</li>

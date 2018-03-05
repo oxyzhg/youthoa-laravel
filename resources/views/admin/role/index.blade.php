@@ -95,6 +95,8 @@
                                 <th>#</th>
                                 <th>角色名<a class="fa fa-fw fa-sort" href="http://laravel-admin.org/demo/auth/users?_sort%5Bcolumn%5D=id&_sort%5Btype%5D=desc"></a></th>
                                 <th>角色描述</th>
+                                <th>拥有权限</th>
+                                <th>更新时间</th>
                                 <th>操作</th>
                             </tr>
                             @foreach($roles as $role)
@@ -106,10 +108,18 @@
                                     {{$role->id}}
                                 </td>
                                 <td>
-                                    {{$role->name}}
+                                    <span class='label label-info'>{{$role->display_name}}</span>
                                 </td>
                                 <td>
-                                    <span class='label label-success'>{{$role->description}}</span>
+                                    {{$role->description}}
+                                </td>
+                                <td>
+                                    @foreach($role->perms as $permission)
+                                        <span class='label label-success'>{{$permission->display_name}}</span>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    {{$role->updated_at}}
                                 </td>
                                 <td>
                                     <a href="roles/{{$role->id}}/permission">

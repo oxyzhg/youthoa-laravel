@@ -27,25 +27,60 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form class="form-horizontal"  action="/admin/users/store" method="post">
+                    <form class="form-horizontal"  action="store" method="post">
                         {{csrf_field()}}
                         <div class="box-body">
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
+                                <label for="input1" class="col-sm-2 control-label">姓名</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputEmail3" name="name" placeholder="Name">
+                                    <input type="text" class="form-control" id="input1" name="name" placeholder="请输入姓名">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                                <label for="input2" class="col-sm-2 control-label">学号</label>
                                 <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="Password">
+                                    <input type="text" class="form-control" id="input2" name="sdut_id" placeholder="请输入学号">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="input3" class="col-sm-2 control-label">部门</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" id="input3" name="department">
+                                        <option>综合部</option>
+                                        <option>采编部</option>
+                                        <option>新媒体</option>
+                                        <option>美工部</option>
+                                        <option>程序部</option>
+                                        <option>闪客部</option>
+                                        <option>品牌部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="input4" class="col-sm-2 control-label">年级</label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="input4" name="grade" placeholder="请输入年级">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="input5" class="col-sm-2 control-label">联系方式</label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="input5" name="phone" placeholder="请输入联系方式">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="input6" class="col-sm-2 control-label">生日</label>
+                                <div class="col-sm-10 input-group date" id="datetimepicker" style="padding: 0 15px;">
+                                    <input type='text' class="form-control" id="input6" name="birthday" placeholder="请选择日期时间">
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer">
-                            {{--<button type="submit" class="btn btn-default">返回</button>--}}
+                            @include('admin.layout.error')
                             <button type="submit" class="btn btn-info pull-right">提交</button>
                         </div>
                         <!-- /.box-footer -->
@@ -55,4 +90,22 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('page-css')
+    <link rel="stylesheet" href="{{ asset("css/bootstrap-datetimepicker.min.css")}}">
+@endsection
+
+@section('page-js')
+    <script src="{{ asset("bower_components/datatables.net/js/jquery.dataTables.min.js")}}"></script>
+    <script src="{{ asset("bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js")}}"></script>
+    <script src="{{ asset("js/moment-with-locales.min.js")}}"></script>
+    <script src="{{ asset("js/bootstrap-datetimepicker.min.js")}}"></script>
+    <script src="{{ asset("js/admin/app.js")}}"></script>
+    <script>
+        $('#datetimepicker').datetimepicker({
+            format: 'YYYY-MM-DD',
+            locale: moment.locale('zh-cn')
+        });
+    </script>
 @endsection

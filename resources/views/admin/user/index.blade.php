@@ -93,10 +93,12 @@
                         <table class="table table-hover table-striped">
                             <tr>
                                 <th> </th>
-                                <th>ID<a class="fa fa-fw fa-sort" href="http://laravel-admin.org/demo/auth/users?_sort%5Bcolumn%5D=id&_sort%5Btype%5D=desc"></a></th>
-                                <th>用户名</th>
-                                <th>角色名</th>
-                                <th>创建时间</th>
+                                <th>#<a class="fa fa-fw fa-sort" href="http://laravel-admin.org/demo/auth/users?_sort%5Bcolumn%5D=id&_sort%5Btype%5D=desc"></a></th>
+                                <th>姓名</th>
+                                <th>部门</th>
+                                <th>年级</th>
+                                <th>联系方式</th>
+                                <th>拥有角色</th>
                                 <th>更新时间</th>
                                 <th>操作</th>
                             </tr>
@@ -112,10 +114,19 @@
                                     {{$user->name}}
                                 </td>
                                 <td>
-                                    <span class='label label-success'>Administrator</span>
+                                    <span class='label label-info'>{{$user->department}}</span>
                                 </td>
                                 <td>
-                                    {{$user->created_at}}
+                                    {{$user->grade}}
+                                </td>
+                                <td>
+                                    {{$user->phone}}
+                                </td>
+                                <td>
+                                    @foreach($user->roles as $role)
+                                        {{--<span class='label label-success'>Administrator</span>--}}
+                                        <span class='label label-success'>{{$role->display_name}}</span>
+                                    @endforeach
                                 </td>
                                 <td>
                                     {{$user->updated_at}}

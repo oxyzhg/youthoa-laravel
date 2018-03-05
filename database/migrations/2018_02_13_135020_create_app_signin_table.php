@@ -13,19 +13,6 @@ class CreateAppSigninTable extends Migration
      */
     public function up()
     {
-        // 青春在线成员信息表
-        Schema::create('youth_users', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('sdut_id',11)->unique();
-            $table->string('name', 30)->default('');
-            $table->string('department', 30)->default('');
-            $table->string('grade', 4)->default('');
-            $table->string('phone', 11)->default('');
-            $table->dateTime('birthday');
-            $table->integer('status')->default(0); // 0使用 1正式 2退站 3劝退
-            $table->timestamps();
-        });
-
         // 签到任务表
         Schema::create('app_signin_dutys', function (Blueprint $table) {
             $table->increments('id');
@@ -51,7 +38,6 @@ class CreateAppSigninTable extends Migration
      */
     public function down()
     {
-        Schema::drop('app_users');
         Schema::drop('app_signin_dutys');
         Schema::drop('app_signin_records');
     }

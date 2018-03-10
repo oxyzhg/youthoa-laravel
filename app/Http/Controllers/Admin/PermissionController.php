@@ -23,9 +23,10 @@ class PermissionController extends Controller
     {
         $this->validate(request(), [
             'name' => 'required|min:3',
+            'display_name' => 'required',
             'description' => 'required'
         ]);
-        Permission::create(request(['name', 'description']));
+        Permission::create(request(['name', 'display_name', 'description']));
         return redirect('/admin/permissions');
     }
 }

@@ -31,15 +31,21 @@
                         {{csrf_field()}}
                         <div class="box-body">
                             <div class="form-group">
-                                <label for="inputName" class="col-sm-2 control-label">权限名字</label>
+                                <label for="input1" class="col-sm-2 control-label">权限名</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputName" name="name" placeholder="添加权限名">
+                                    <input type="text" class="form-control" id="input1" name="name" placeholder="请输入权限英文名称">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputDesc" class="col-sm-2 control-label">权限描述</label>
+                                <label for="input2" class="col-sm-2 control-label">权限名</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputDesc" name="description" placeholder="添加角权限描述">
+                                    <input type="text" class="form-control" id="input2" name="display_name" placeholder="请输入权限显示名称">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="input3" class="col-sm-2 control-label">权限描述</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="input3" name="description" placeholder="请输入权限描述">
                                 </div>
                             </div>
                         </div>

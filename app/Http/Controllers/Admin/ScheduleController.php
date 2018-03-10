@@ -17,6 +17,7 @@ class ScheduleController extends Controller
 
     public function store()
     {
+//        dd(\request());
         $this->validate(request(), [
             'name' => 'required|min:2',
             'location' => 'required|min:2',
@@ -24,12 +25,7 @@ class ScheduleController extends Controller
             'sdut_id' => 'required|exists:youth_users,sdut_id'
         ]);
 
-        $name = request('name');
-        $location = request('location');
-        $datetime = request('datetime');
-        $sdut_id = request('sdut_id');
-
-        AppSchedule::create(compact('name', 'location', 'datetime', 'sdut_id'));
+        AppSchedule::create(request(['name', 'location', 'datetime', 'sdut_id']));
 
         return back();
     }

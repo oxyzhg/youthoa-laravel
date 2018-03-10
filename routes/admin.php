@@ -38,7 +38,6 @@ Route::group(['prefix' => 'admin'], function () {
     // 设备使用记录
     Route::get('/usage', 'Admin\UsageController@index');
     Route::post('/usage', 'Admin\UsageController@store');
-    // Route::post('/usage/store', 'Admin\UsageController@store');
     Route::put('/usage/{usage}', 'Admin\UsageController@update');
     Route::delete('/usage/{usage}', 'Admin\UsageController@destory');
     // 工作量计算

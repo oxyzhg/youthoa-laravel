@@ -132,11 +132,8 @@
                                     {{$user->updated_at}}
                                 </td>
                                 <td>
-                                    <a href="users/{{$user->id}}/role">
-                                        <i class="fa fa-edit"></i>
-                                    </a><a href="javascript:void(0);" data-id="2" class="grid-row-delete">
-                                        <i class="fa fa-trash"></i>
-                                    </a>
+                                    <a href="users/{{$user->id}}/role"><i class="fa fa-edit"></i></a>
+                                    <a href="javascript:void(0);"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                             @endforeach

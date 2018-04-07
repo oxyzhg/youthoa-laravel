@@ -16,7 +16,7 @@ class UserTableSeeder extends Seeder
         // 创建后台管理用户
         User::create([
             'name'     => 'youthol',
-            'email'    => 'youthol@163.com',
+            'email'    => 'youthlab@126.com',
             'password' => bcrypt('youth123')
         ]);
     }

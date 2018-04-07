@@ -43,13 +43,18 @@ class PermissionTableSeeder extends Seeder
 
     public function attachPermissionToRole()
     {
-        $Role = Role::where('name','=','Administrator')->first();
+        $RoleAdmin = Role::where('name','=','Administrator')->first();
+        $RoleChairman = Role::where('name','=','Chairman')->first();
+        $RoleManager = Role::where('name','=','Manager')->first();
+
         $Permissions = Permission::all()->toArray();
         $PermissionsIds = [];
         foreach ($Permissions as $Permission) {
             $PermissionsIds[] = $Permission['id'];
         }
-        $Role->perms()->sync($PermissionsIds);
+        $RoleAdmin->perms()->sync($PermissionsIds);
+        $RoleChairman->perms()->sync($PermissionsIds);
+        $RoleManager->perms()->sync($PermissionsIds);
     }
 
     public function attachRoleToUser()

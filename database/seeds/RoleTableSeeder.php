@@ -20,26 +20,38 @@ class RoleTableSeeder extends Seeder
     {
         Role::create([
             'name'         => 'Administrator',
-            'display_name' => '超级管理员',
-            'description'  => '超级管理员',
+            'display_name' => '站长',
+            'description'  => '网站站长',
         ]);
 
         Role::create([
-            'name'         => 'Managers',
-            'display_name' => '管理员',
+            'name'         => 'Chairman',
+            'display_name' => '主任',
+            'description'  => '部门主任',
+        ]);
+
+        Role::create([
+            'name'         => 'Manager',
+            'display_name' => '管理',
             'description'  => '管理员',
         ]);
 
         Role::create([
             'name'         => 'Member',
-            'display_name' => '成员',
-            'description'  => '成员',
+            'display_name' => '正式',
+            'description'  => '正式',
         ]);
 
         Role::create([
-            'name'         => 'Visitor',
-            'display_name' => '游客',
-            'description'  => '游客',
+            'name'         => 'Retired',
+            'display_name' => '退站',
+            'description'  => '退站',
+        ]);
+
+        Role::create([
+            'name'         => 'Trial',
+            'display_name' => '试用',
+            'description'  => '试用',
         ]);
     }
 }

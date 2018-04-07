@@ -15,6 +15,10 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/users/store', 'Admin\UserController@store');
     Route::get('/users/{user}/role', 'Admin\UserController@role');
     Route::post('/users/{user}/role', 'Admin\UserController@storeRole');
+    Route::get('/users/upload', 'Admin\UserController@upload');
+    Route::get('/users/import', 'Admin\UserController@import');
+    Route::get('/users/export', 'Admin\UserController@export');
+
     // 角色模块
      Route::get('/roles', 'Admin\RoleController@index');
      Route::get('/roles/create', 'Admin\RoleController@create');
@@ -28,8 +32,9 @@ Route::group(['prefix' => 'admin'], function () {
     // 签到系统
     Route::get('/signin', 'Admin\SigninController@index');
     Route::post('/signin', 'Admin\SigninController@store');
+    Route::get('/signin/upload', 'Admin\SigninController@upload');
+    Route::post('/signin/import', 'Admin\SigninController@import');
     Route::get('/signin/export', 'Admin\SigninController@export');
-    Route::get('/signin/import', 'Admin\SigninController@import');
     // 日程安排
     Route::get('/schedule', 'Admin\ScheduleController@index');
     Route::post('/schedule/store', 'Admin\ScheduleController@store');

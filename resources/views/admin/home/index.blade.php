@@ -20,7 +20,7 @@
 		<div class="col-lg-3 col-xs-6">
 			<div class="small-box bg-aqua">
 				<div class="inner">
-					<h3>58<sup style="font-size:.5em">人</sup></h3>
+					<h3>{{$youth_users_count}}<sup style="font-size:.5em">人</sup></h3>
 					<p>网站成员</p>
 				</div>
 				<div class="icon"><i class="fa fa-user"></i></div>
@@ -31,7 +31,7 @@
         <div class="col-lg-3 col-xs-6">
 			<div class="small-box bg-green">
 				<div class="inner">
-					<h3>12<sup style="font-size:.5em">人</sup></h3>
+					<h3>{{$records_today_count}}<sup style="font-size:.5em">人</sup></h3>
 					<p>今日签到</p>
 				</div>
 				<div class="icon"><i class="fa fa-flag-o"></i></div>
@@ -42,8 +42,8 @@
         <div class="col-lg-3 col-xs-6">
 			<div class="small-box bg-yellow">
 				<div class="inner">
-					<h3>9<sup style="font-size:.5em">个</sup></h3>
-					<p>待做任务</p>
+					<h3>{{$schedule_count}}<sup style="font-size:.5em">个</sup></h3>
+					<p>待办事项</p>
 				</div>
 				<div class="icon"><i class="fa fa-calendar-check-o"></i></div>
 				<a href="/admin/schedule" class="small-box-footer">更多信息 <i class="fa fa-arrow-circle-right"></i></a>
@@ -53,7 +53,7 @@
         <div class="col-lg-3 col-xs-6">
 			<div class="small-box bg-red">
 				<div class="inner">
-					<h3>1655</h3>
+					<h3>{{$workload_count}}</h3>
 					<p>总工作量</p>
 				</div>
 				<div class="icon"><i class="fa fa-area-chart"></i></div>
@@ -118,107 +118,76 @@
 					<i class="ion ion-clipboard"></i>
 					<h3 class="box-title">待办事项</h3>
 					<div class="box-tools pull-right">
-						<ul class="pagination pagination-sm inline">
-							<li><a href="#">&laquo;</a></li>
-							<li><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">&raquo;</a></li>
-						</ul>
+						<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+						<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
 					</div>
+					{{--<div class="box-tools pull-right">--}}
+						{{--<ul class="pagination pagination-sm inline">--}}
+							{{--<li><a href="#">&laquo;</a></li>--}}
+							{{--<li><a href="#">1</a></li>--}}
+							{{--<li><a href="#">2</a></li>--}}
+							{{--<li><a href="#">3</a></li>--}}
+							{{--<li><a href="#">&raquo;</a></li>--}}
+						{{--</ul>--}}
+					{{--</div>--}}
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
 					<!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
 					<ul class="todo-list">
+						@foreach($schedules as $schedule)
 						<li>
 							<!-- drag handle -->
 							<span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
+                        		<i class="fa fa-ellipsis-v"></i>
+                        		<i class="fa fa-ellipsis-v"></i>
+                      		</span>
 							<!-- checkbox -->
 							<input type="checkbox" value="">
 							<!-- todo text -->
-							<span class="text">Design a nice theme</span>
+							<span class="text">{{$schedule->name}}</span>
 							<!-- Emphasis label -->
-							<small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
+							<small class="label label-info"><i class="fa fa-clock-o"></i>{{$schedule->location}}</small>
+							<small class="label label-warning"><i class="fa fa-clock-o"></i>{{$schedule->datetime}}</small>
 							<!-- General tools such as edit or delete-->
 							<div class="tools">
 								<i class="fa fa-edit"></i>
 								<i class="fa fa-trash-o"></i>
 							</div>
 						</li>
-						<li>
-                    <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-							<input type="checkbox" value="">
-							<span class="text">Make the theme responsive</span>
-							<small class="label label-info"><i class="fa fa-clock-o"></i> 4 hours</small>
-							<div class="tools">
-								<i class="fa fa-edit"></i>
-								<i class="fa fa-trash-o"></i>
-							</div>
-						</li>
-						<li>
-                    <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-							<input type="checkbox" value="">
-							<span class="text">Let theme shine like a star</span>
-							<small class="label label-warning"><i class="fa fa-clock-o"></i> 1 day</small>
-							<div class="tools">
-								<i class="fa fa-edit"></i>
-								<i class="fa fa-trash-o"></i>
-							</div>
-						</li>
-						<li>
-                    <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-							<input type="checkbox" value="">
-							<span class="text">Let theme shine like a star</span>
-							<small class="label label-success"><i class="fa fa-clock-o"></i> 3 days</small>
-							<div class="tools">
-								<i class="fa fa-edit"></i>
-								<i class="fa fa-trash-o"></i>
-							</div>
-						</li>
-						<li>
-                    <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-							<input type="checkbox" value="">
-							<span class="text">Check your messages and notifications</span>
-							<small class="label label-primary"><i class="fa fa-clock-o"></i> 1 week</small>
-							<div class="tools">
-								<i class="fa fa-edit"></i>
-								<i class="fa fa-trash-o"></i>
-							</div>
-						</li>
-						<li>
-                    <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-							<input type="checkbox" value="">
-							<span class="text">Let theme shine like a star</span>
-							<small class="label label-default"><i class="fa fa-clock-o"></i> 1 month</small>
-							<div class="tools">
-								<i class="fa fa-edit"></i>
-								<i class="fa fa-trash-o"></i>
-							</div>
-						</li>
+						@endforeach
+						{{--<li>--}}
+                    		{{--<span class="handle">--}}
+                        		{{--<i class="fa fa-ellipsis-v"></i>--}}
+                        		{{--<i class="fa fa-ellipsis-v"></i>--}}
+                      		{{--</span>--}}
+							{{--<input type="checkbox" value="">--}}
+							{{--<span class="text">Make the theme responsive</span>--}}
+							{{--<small class="label label-info"><i class="fa fa-clock-o"></i> 4 hours</small>--}}
+							{{--<div class="tools">--}}
+								{{--<i class="fa fa-edit"></i>--}}
+								{{--<i class="fa fa-trash-o"></i>--}}
+							{{--</div>--}}
+						{{--</li>--}}
+						{{--<li>--}}
+                    		{{--<span class="handle">--}}
+								{{--<i class="fa fa-ellipsis-v"></i>--}}
+                        		{{--<i class="fa fa-ellipsis-v"></i>--}}
+                      		{{--</span>--}}
+							{{--<input type="checkbox" value="">--}}
+							{{--<span class="text">Let theme shine like a star</span>--}}
+							{{--<small class="label label-warning"><i class="fa fa-clock-o"></i> 1 day</small>--}}
+							{{--<div class="tools">--}}
+								{{--<i class="fa fa-edit"></i>--}}
+								{{--<i class="fa fa-trash-o"></i>--}}
+							{{--</div>--}}
+						{{--</li>--}}
+
 					</ul>
 				</div>
 				<!-- /.box-body -->
 				<div class="box-footer clearfix no-border">
-					<button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
+					{{--<button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>--}}
 				</div>
 			</div>
 			<!-- /.box -->

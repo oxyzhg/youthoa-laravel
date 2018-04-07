@@ -20,12 +20,12 @@ class CreateYouthUsersTable extends Migration
             $table->string('name', 30)->default('');
             $table->string('department', 30)->default('');
             $table->string('grade', 4)->default('');
-            $table->string('phone', 11)->default('');
+            $table->string('phone', 11)->nullable();
             $table->dateTime('birthday');
-            $table->integer('status')->default(0); // 0使用 1正式 2退站 3劝退
+            $table->integer('rolenum')->nullable(); // 0默认 1站长 2主任 3管理
+            $table->integer('status')->default(0); // 4正式 5退站 6试用
             $table->timestamps();
         });
-
     }
 
     /**

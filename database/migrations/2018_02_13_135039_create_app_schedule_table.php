@@ -19,7 +19,7 @@ class CreateAppScheduleTable extends Migration
             $table->string('location')->nullable();
             $table->dateTime('datetime');
             $table->string('sdut_id', 11)->nullable();
-            $table->integer('status')->default(0);
+            $table->integer('status')->default(0); // 0未完成 1完成
             $table->timestamps();
             $table->softDeletes();
         });

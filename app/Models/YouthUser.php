@@ -10,7 +10,7 @@ class YouthUser extends Authenticatable
 {
     use Notifiable;
     use EntrustUserTrait;
-    protected $fillable = [ 'name', 'sdut_id', 'department', 'grade', 'phone', 'birthday'];
+    protected $fillable = [ 'name', 'sdut_id', 'department', 'grade', 'phone', 'birthday', 'status'];
 
     // 给用户分配角色
     public function assignRole($role)

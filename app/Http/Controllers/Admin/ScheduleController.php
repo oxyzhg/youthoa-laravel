@@ -11,7 +11,7 @@ class ScheduleController extends Controller
 {
     public function index()
     {
-        $schedules = AppSchedule::where('datetime', '>', date('Y-m-d'))->orderBy('datetime', 'asc')->get();
+        $schedules = AppSchedule::where('datetime', '>', date('Y-m-d'))->orWhere('status', '0')->orderBy('datetime', 'asc')->get();
         return view('app.schedule.index', compact('schedules'));
     }
 

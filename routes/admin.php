@@ -33,7 +33,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/signin', 'Admin\SigninController@index');
     Route::post('/signin', 'Admin\SigninController@store');
     Route::get('/signin/upload', 'Admin\SigninController@upload');
-    Route::post('/signin/import', 'Admin\SigninController@import');
+    Route::get('/signin/import', 'Admin\SigninController@import');
     Route::get('/signin/export', 'Admin\SigninController@export');
     // 日程安排
     Route::get('/schedule', 'Admin\ScheduleController@index');

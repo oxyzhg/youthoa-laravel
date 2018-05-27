@@ -131,13 +131,13 @@ class SigninController extends Controller
             $all_data[$rec->sdut_id]['name'] = $rec->user->name;
             $all_data[$rec->sdut_id]['sdut_id'] = $rec->user->sdut_id;
             $all_data[$rec->sdut_id]['department'] = $rec->user->department;
-            $all_data[$rec->sdut_id]['origin'] = $n;
-            $all_data[$rec->sdut_id]['unsignout'] = isset($all_data[$rec->sdut_id]['unsignout']) ? $all_data[$rec->sdut_id]['unsignout'] : 0;
-            $all_data[$rec->sdut_id]['normal'] = isset($all_data[$rec->sdut_id]['normal']) ? $all_data[$rec->sdut_id]['normal'] : 0;
-            $all_data[$rec->sdut_id]['normal_at'] = isset($all_data[$rec->sdut_id]['normal_at']) ? $all_data[$rec->sdut_id]['normal_at'] : 0;
-            $all_data[$rec->sdut_id]['surplus'] = isset($all_data[$rec->sdut_id]['surplus']) ? $all_data[$rec->sdut_id]['surplus'] : 0;
-            $all_data[$rec->sdut_id]['surplus_at'] = isset($all_data[$rec->sdut_id]['surplus_at']) ? $all_data[$rec->sdut_id]['surplus_at'] : 0;
-            $all_data[$rec->sdut_id]['early'] = isset($all_data[$rec->sdut_id]['early']) ? $all_data[$rec->sdut_id]['early'] : 0;
+            $all_data[$rec->sdut_id]['origin'] = $n; //本应签到次数，未除去节假日
+            $all_data[$rec->sdut_id]['unsignout'] = isset($all_data[$rec->sdut_id]['unsignout']) ? $all_data[$rec->sdut_id]['unsignout'] : 0; //未签退
+            $all_data[$rec->sdut_id]['normal'] = isset($all_data[$rec->sdut_id]['normal']) ? $all_data[$rec->sdut_id]['normal'] : 0; //正常签退
+            $all_data[$rec->sdut_id]['normal_at'] = isset($all_data[$rec->sdut_id]['normal_at']) ? $all_data[$rec->sdut_id]['normal_at'] : 0; //正常签到时长
+            $all_data[$rec->sdut_id]['surplus'] = isset($all_data[$rec->sdut_id]['surplus']) ? $all_data[$rec->sdut_id]['surplus'] : 0; //额外签到
+            $all_data[$rec->sdut_id]['surplus_at'] = isset($all_data[$rec->sdut_id]['surplus_at']) ? $all_data[$rec->sdut_id]['surplus_at'] : 0; //额外签到时长
+            $all_data[$rec->sdut_id]['early'] = isset($all_data[$rec->sdut_id]['early']) ? $all_data[$rec->sdut_id]['early'] : 0; //早退
 
             switch ($rec->status) {
                 case 0:
